@@ -4,13 +4,37 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-
+import json
+import login_test from "./login_test"
 
  
 
-# Actions action = new Actions(driver);
+# json 파일쓰기 
+# file_path = "./sample.json"
 
+# data = {}
+# data['logIn'] = []
+# data['logIn'].append({
+#     "step1": True,
+#     "step2": False,
+#     "step3": True
+# })
+# data['logIn'].append({
+#     "step1": False,
+#     "step2": True,
+#     "step3": True
+# })
+# print(data)
+
+# with open(file_path, 'w') as outfile:
+#     json.dump(data, outfile, indent=4)
+
+
+
+# Actions action = new Actions(driver);
 DEBUGGER = True
+userName = 'seorang'
+pw = 'seorang1234'
 # options = webdriver.ChromeOptions()
 # options.add_argument('window-size=1920,1080')
 
@@ -27,9 +51,13 @@ driver.get('http://211.119.65.122:53080/')
 
 action = ActionChains(driver)
 # driver.get('https://www.naver.com')
- 
+
+print(driver.title)
+# Brightonix Imaging - Amyloid
+
 #sign up
 # 1. 모든 조건 만족하는 가입 test
+
 # elm_sign_up = driver.find_element_by_xpath("""//*[@id="root"]/div/div[1]/div[2]""")
 # elm_sign_up.click()
 
@@ -64,8 +92,8 @@ if DEBUGGER:
 
 elm_id = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[1]/input""")
 elm_pwd = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[2]/input""")
-elm_id.send_keys('seorang') 
-elm_pwd.send_keys('seorang1234')
+elm_id.send_keys(userName) 
+elm_pwd.send_keys(pw)
 
 license_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/label/input""")
 login_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/div[2]""")
