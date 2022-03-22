@@ -1,0 +1,14 @@
+[
+    {
+        "step": 0,
+        "title": "signUp",
+        "description": "create account",
+        "status": true
+    },
+    {
+        "step": 1,
+        "title": "signUp",
+        "description": "delete account",
+        "status": true
+    }
+]
