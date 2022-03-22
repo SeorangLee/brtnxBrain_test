@@ -64,12 +64,12 @@ def signUp() :
       sleep(2)
       Alert(driver).accept()
       data = {
-          "step":0, "title":"signUp", "description":"create account", "status":True 
+          "step":0, "title":"login", "description":"create account", "status":True 
         }
 
     except:
          data = {
-            "step":0, "title":"signUp", "description":"create account", "status":False 
+            "step":0, "title":"login", "description":"create account", "status":False 
         }
     return data
 
@@ -102,15 +102,45 @@ def remove_test_id():
 			users_delete_sure_btn = driver.find_element_by_xpath("""//*[@id="content"]/form/div/input[4]""")
 			users_delete_sure_btn.click()
 			data = {
-            "step":1, "title":"signUp", "description":"delete account", "status":True 
+            "step":1, "title":"login", "description":"delete account", "status":True 
         }
 		
 	except:
 		data = {
-            "step":1, "title":"signUp", "description":"delete account", "status":False 
+            "step":1, "title":"login", "description":"delete account", "status":False 
         }
 
 	return data	
+
+
+def login():
+	driver.get("http://211.119.65.122:53080/")
+	try:
+		elm_id = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[1]/input""")
+		elm_pwd = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[2]/input""")
+		elm_id.send_keys('seorang') 
+		elm_pwd.send_keys('seorang1234')
+
+		license_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/label/input""")
+		login_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/div[2]""")
+
+		login_btn.click()
+		Alert(driver).accept()
+
+		license_btn.click()
+		login_btn.click()
+		data = {
+            "step":2, "title":"login", "description":"login", "status":True 
+        }
+	
+	except:
+		data = {
+            "step":2, "title":"login", "description":"login", "status":False 
+        }
+
+	return data
+
+
 
 
 
