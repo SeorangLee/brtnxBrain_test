@@ -5,29 +5,29 @@ from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import json
-import login_test from "./login_test"
+# import login_test from "./login_test"
 
  
 
 # json 파일쓰기 
-# file_path = "./sample.json"
+file_path = "./sample.json"
 
-# data = {}
-# data['logIn'] = []
-# data['logIn'].append({
-#     "step1": True,
-#     "step2": False,
-#     "step3": True
-# })
-# data['logIn'].append({
-#     "step1": False,
-#     "step2": True,
-#     "step3": True
-# })
-# print(data)
+data = {}
+data['logIn'] = []
+data['logIn'].append({
+    "step1": True,
+    "step2": False,
+    "step3": True
+})
+data['logIn'].append({
+    "step1": False,
+    "step2": True,
+    "step3": True
+})
+print(data)
 
-# with open(file_path, 'w') as outfile:
-#     json.dump(data, outfile, indent=4)
+with open(file_path, 'w') as outfile:
+    json.dump(data, outfile, indent=4)
 
 
 
@@ -107,20 +107,20 @@ login_btn.click()
 
 
 
-if DEBUGGER:
-    sleep(1.5)
+# if DEBUGGER:
+#     sleep(1.5)
 
-# upload page 
+# # upload page 
 
 upload_btn = driver.find_element_by_xpath("""//*[@id="menu-label"]""")
 upload_btn.click()
 
-#1.select data
-upload_table = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/table/tbody/tr[1]""")
-action.double_click(upload_table).perform()
-# action.double_click(on_element = select_btn).perform()
+# #1.select data
+# upload_table = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/table/tbody/tr[1]""")
+# action.double_click(upload_table).perform()
+# # action.double_click(on_element = select_btn).perform()
 
-# 2. pacs
+# # 2. pacs
 # upload_pacs_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div/div[7]""")
 # upload_pacs_btn.click()
 
@@ -149,132 +149,132 @@ action.double_click(upload_table).perform()
 # pacs_run_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[3]/div[3]/div""")
 # pacs_run_btn.click()
 
+# # if DEBUGGER:
+# #     sleep(3)
+
+
+# # 2.view page
+
+# view_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[1]
+# view_btn.click()
+# sleep(2)
+
+# # -menu btns test
+# view_mip_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[1]/div[2]""")
+# view_mip_btn.click()
+# sleep(2)
+# view_mip_btn.click()
+
+# view_overlay_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[2]/div[2]/img""")
+# view_overlay_btn.click()
+# sleep(2)
+# view_overlay_btn.click()
+# # view_overlay_control_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[2]/div[4]/div""")
+# # drag_and_drop_by_offset(view_overlay_control_btn, )
+
+# view_line_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[4]/div""")
+# view_line_btn.click()
+# sleep(1)
+# view_line_btn.click()
+
+# view_brain_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[5]/div""")
+# view_brain_btn.click()
+# sleep(1)
+# view_brain_btn.click()
+
+# view_reverse_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[6]/div""")
+# view_reverse_btn.click()
+# sleep(1)
+# view_reverse_btn.click()
+
+# view_colormap_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div""")
+# view_colormap_btn.click()
+# sleep(1)
+
+# view_colormap_gray = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div/div/div[1]/div""")
+# view_colormap_gray.click()
+# sleep(1)
+# view_reverse_btn.click()
+# sleep(1)
+# view_reverse_btn.click()
+
+# view_colormap_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div""")
+# view_colormap_btn.click()
+# sleep(1)
+
+# view_colormap_hot = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div/div/div[2]/div""")
+# view_colormap_hot.click()
+# sleep(1)
+# view_reverse_btn.click()
+# sleep(1)
+# view_reverse_btn.click()
+
+
+# view_colormap_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div""")
+# view_colormap_btn.click()
+# sleep(1)
+
+# view_colormap_jet = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div/div/div[3]/div""")
+# view_colormap_jet.click()
+# sleep(1)
+# view_reverse_btn.click()
+# sleep(1)
+# view_reverse_btn.click()
+
+# view_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div""")
+# view_burger_btn.click()
+
+# view_burger_report = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[1]/div""")
+# view_burger_report.click()
+
 # if DEBUGGER:
-#     sleep(3)
+#     sleep(1.5)
+
+# # 3.report
+# report_last_elm = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[5]/div[2]/div[4]/div[2]""")
+# action.move_to_element(report_last_elm).perform()
+
+# report_back_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[1]""")
+# report_back_btn.click()
+
+# sleep(3)
+# view_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div""")
+# view_burger_btn.click()
+# view_burger_csv = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[2]/div""")
+# view_burger_csv.click()
+
+# view_burger_btn.click()
+# view_burger_nifti_suvr = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[3]/div""")
+# view_burger_nifti_suvr.click()
+
+# view_burger_btn.click()
+# view_burger_nifti_itens = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[4]/div""")
+# view_burger_nifti_itens.click()
 
 
-# 2.view page
+# if DEBUGGER:
+#     sleep(1.5)
 
-view_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[1]
-view_btn.click()
-sleep(2)
+# # # 4.analysis page
+# analysis_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[2]
+# analysis_btn.click()
 
-# -menu btns test
-view_mip_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[1]/div[2]""")
-view_mip_btn.click()
-sleep(2)
-view_mip_btn.click()
-
-view_overlay_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[2]/div[2]/img""")
-view_overlay_btn.click()
-sleep(2)
-view_overlay_btn.click()
-# view_overlay_control_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[2]/div[4]/div""")
-# drag_and_drop_by_offset(view_overlay_control_btn, )
-
-view_line_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[4]/div""")
-view_line_btn.click()
-sleep(1)
-view_line_btn.click()
-
-view_brain_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[5]/div""")
-view_brain_btn.click()
-sleep(1)
-view_brain_btn.click()
-
-view_reverse_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[6]/div""")
-view_reverse_btn.click()
-sleep(1)
-view_reverse_btn.click()
-
-view_colormap_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div""")
-view_colormap_btn.click()
-sleep(1)
-
-view_colormap_gray = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div/div/div[1]/div""")
-view_colormap_gray.click()
-sleep(1)
-view_reverse_btn.click()
-sleep(1)
-view_reverse_btn.click()
-
-view_colormap_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div""")
-view_colormap_btn.click()
-sleep(1)
-
-view_colormap_hot = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div/div/div[2]/div""")
-view_colormap_hot.click()
-sleep(1)
-view_reverse_btn.click()
-sleep(1)
-view_reverse_btn.click()
-
-
-view_colormap_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div""")
-view_colormap_btn.click()
-sleep(1)
-
-view_colormap_jet = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[8]/div/div/div[3]/div""")
-view_colormap_jet.click()
-sleep(1)
-view_reverse_btn.click()
-sleep(1)
-view_reverse_btn.click()
-
-view_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div""")
-view_burger_btn.click()
-
-view_burger_report = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[1]/div""")
-view_burger_report.click()
-
-if DEBUGGER:
-    sleep(1.5)
-
-# 3.report
-report_last_elm = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[5]/div[2]/div[4]/div[2]""")
-action.move_to_element(report_last_elm).perform()
-
-report_back_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[1]""")
-report_back_btn.click()
-
-sleep(3)
-view_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div""")
-view_burger_btn.click()
-view_burger_csv = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[2]/div""")
-view_burger_csv.click()
-
-view_burger_btn.click()
-view_burger_nifti_suvr = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[3]/div""")
-view_burger_nifti_suvr.click()
-
-view_burger_btn.click()
-view_burger_nifti_itens = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[9]/div/div/div[4]/div""")
-view_burger_nifti_itens.click()
-
-
-if DEBUGGER:
-    sleep(1.5)
-
-# # 4.analysis page
-analysis_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[2]
-analysis_btn.click()
-
-analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
-analysis_last_elm = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/div[3]/div[2]/div[3]/input""")
-action.move_to_element(analysis_last_elm).perform()
-analysis_burger_btn.click()
-analysis_report = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[1]/div""")
-analysis_report.click()
-sleep(1)
-report_back_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[1]""")
-report_back_btn.click()
-sleep(1)
-analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
-analysis_burger_btn.click()
-analysis_csv = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[2]/div""")
-analysis_csv.click()
-analysis_nifti = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[3]/div""")
-analysis_nifti.click()
+# analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
+# analysis_last_elm = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/div[3]/div[2]/div[3]/input""")
+# action.move_to_element(analysis_last_elm).perform()
+# analysis_burger_btn.click()
+# analysis_report = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[1]/div""")
+# analysis_report.click()
+# sleep(1)
+# report_back_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[1]""")
+# report_back_btn.click()
+# sleep(1)
+# analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
+# analysis_burger_btn.click()
+# analysis_csv = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[2]/div""")
+# analysis_csv.click()
+# analysis_nifti = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[3]/div""")
+# analysis_nifti.click()
 
 
 

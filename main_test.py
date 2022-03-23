@@ -1,18 +1,50 @@
 
+from selenium import webdriver
+from time import sleep
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import log
 import login_test
+import upload_test
+import view_test
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("prefs", {"profile.default_content_setting_values.notifications": 1})
+driver = webdriver.Chrome(chrome_options=options, executable_path='C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe')
+# driver = webdriver.Chrome(r'C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe', options=options)
+driver.implicitly_wait(3)
+driver.get('http://localhost:3000')
+action = ActionChains(driver)
 
 data = []
 
 # 가입
-login_create_account = login_test.signUp()
-data.append(login_create_account)
-#test 계정 삭제
-login_delete_account = login_test.remove_test_id()
-data.append(login_delete_account)
-print(data)
+# login_create_account = login_test.signUp(driver, options)
+# data.append(login_create_account)
+# #test 계정 삭제
+# login_delete_account = login_test.remove_test_id(driver,options)
+# data.append(login_delete_account)
+# print(data)
 #로그인
-login_login = login_test.login()
+login_login = login_test.login(driver, options)
 data.append(login_login)
+
+#업로드
+upload_select_data = upload_test.upload_select_data(driver, action, options)
+data.append(upload_select_data)
+
+# upload_pacs = upload_test.upload_pacs(driver,options)
+# data.append(upload_pacs)
+
+#뷰
+view_btn = view_test.view_btn(driver,options)
+data.append(view_btn)
+
+view_burger_btn = view_test.view_burger_btn(driver, action, options)
+data.append(view_burger_btn)
+
 print(data)
 log.mkLog(data) #로그파일 생성
+

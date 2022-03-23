@@ -12,15 +12,15 @@ import random
 
 # 1. 모든 조건 만족하는 가입 test
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option("prefs", {
-    "profile.default_content_setting_values.notifications": 1
-})
-driver = webdriver.Chrome(chrome_options=options, executable_path='C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe')
-# driver = webdriver.Chrome(r'C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe', options=options)
-driver.implicitly_wait(3)
-driver.get('http://211.119.65.122:53080/')
-action = ActionChains(driver)
+# options = webdriver.ChromeOptions()
+# options.add_experimental_option("prefs", {
+#     "profile.default_content_setting_values.notifications": 1
+# })
+# driver = webdriver.Chrome(chrome_options=options, executable_path='C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe')
+# # driver = webdriver.Chrome(r'C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe', options=options)
+# driver.implicitly_wait(3)
+# driver.get('http://211.119.65.122:53080/')
+# action = ActionChains(driver)
 
 
 def randomInfo(num):
@@ -39,10 +39,8 @@ admin_userName = copy(userName)
 pw = randomInfo(9)
 email = randomInfo(5)+'@'+randomInfo(5)+'.com'
 
-def signUp() :
+def signUp(driver, options) :
     try:
-			
-
       elm_sign_up = driver.find_element_by_xpath("""//*[@id="root"]/div/div[1]/div[2]""")
       elm_sign_up.click()
       sgn_first_name = driver.find_element_by_xpath("""//*[@id="root"]/div/form/label[1]/div/input[1]""")
@@ -74,9 +72,9 @@ def signUp() :
     return data
 
 
-def remove_test_id():
+def remove_test_id(driver,options):
 	try:
-			driver.get("http://211.119.65.122:8000/admin")
+			driver.get("http://211.119.65.122:8001/admin")
 			# driver.get('http://211.119.65.122:8000/admin')
 			# action = ActionChains(driver)
 			admin_id = driver.find_element_by_xpath("""//*[@id="id_username"]""")
@@ -113,8 +111,8 @@ def remove_test_id():
 	return data	
 
 
-def login():
-	driver.get("http://211.119.65.122:53080/")
+def login(driver,options):
+	driver.get("http://localhost:3000/")
 	try:
 		elm_id = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[1]/input""")
 		elm_pwd = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[2]/input""")
@@ -124,11 +122,13 @@ def login():
 		license_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/label/input""")
 		login_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/div[2]""")
 
-		login_btn.click()
-		Alert(driver).accept()
+		# login_btn.click()
+		# Alert(driver).accept()
 
 		license_btn.click()
 		login_btn.click()
+		sleep(1.5)
+     
 		data = {
             "step":2, "title":"login", "description":"login", "status":True 
         }
