@@ -155,9 +155,9 @@ upload_btn.click()
 
 # # 2.view page
 
-# view_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[1]
-# view_btn.click()
-# sleep(2)
+view_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[1]
+view_btn.click()
+sleep(2)
 
 # # -menu btns test
 # view_mip_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div/div[1]/div[1]/div[1]/div[2]""")
@@ -255,26 +255,26 @@ upload_btn.click()
 # if DEBUGGER:
 #     sleep(1.5)
 
-# # # 4.analysis page
-# analysis_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[2]
-# analysis_btn.click()
+# # 4.analysis page
+analysis_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[2]
+analysis_btn.click()
 
-# analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
-# analysis_last_elm = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/div[3]/div[2]/div[3]/input""")
-# action.move_to_element(analysis_last_elm).perform()
-# analysis_burger_btn.click()
-# analysis_report = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[1]/div""")
-# analysis_report.click()
-# sleep(1)
-# report_back_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[1]""")
-# report_back_btn.click()
-# sleep(1)
-# analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
-# analysis_burger_btn.click()
-# analysis_csv = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[2]/div""")
-# analysis_csv.click()
-# analysis_nifti = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[3]/div""")
-# analysis_nifti.click()
+analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
+analysis_last_elm = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/div[3]/div[2]/div[3]/input""")
+action.move_to_element(analysis_last_elm).perform()
+analysis_burger_btn.click()
+analysis_report = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[1]/div""")
+analysis_report.click()
+sleep(1)
+report_back_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div/div[1]""")
+report_back_btn.click()
+sleep(1)
+analysis_burger_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div""")
+analysis_burger_btn.click()
+analysis_csv = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[2]/div""")
+analysis_csv.click()
+analysis_nifti = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div/div[3]/div""")
+analysis_nifti.click()
 
 
 

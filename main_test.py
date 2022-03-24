@@ -5,10 +5,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+import csv
+import json
 import log
 import login_test
 import upload_test
 import view_test
+import analysis_test
+import setting_test
+from datetime import datetime
+
+now = datetime.now()
+current_time  = now.strftime('%Y%m%d_%Hh%Mm%Ss')
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("prefs", {"profile.default_content_setting_values.notifications": 1})
@@ -17,6 +25,8 @@ driver = webdriver.Chrome(chrome_options=options, executable_path='C://Users//Si
 driver.implicitly_wait(3)
 driver.get('http://localhost:3000')
 action = ActionChains(driver)
+
+
 
 data = []
 
@@ -45,6 +55,27 @@ data.append(view_btn)
 view_burger_btn = view_test.view_burger_btn(driver, action, options)
 data.append(view_burger_btn)
 
+#어널리시스
+analysis_page = analysis_test.analysis_page(driver, options, action)
+data.append(analysis_page)
+
+#세팅
+setting_set_conditions = setting_test.setting_set_conditions(driver, options, action)
+data.append(setting_set_conditions)
+
+setting_mk_roi = setting_test.setting_mk_roi(driver, options, action)
+data.append(setting_mk_roi)
+
+setting_save = setting_test.setting_save(driver, options, action)
+data.append(setting_save)
+
+# setting_reset = setting_test.setting_reset(driver, options, action)
+# data.append(setting_reset)
+
+
+
+
 print(data)
 log.mkLog(data) #로그파일 생성
+log.mkLogToCSV(current_time, data) #csv파일 생성
 
