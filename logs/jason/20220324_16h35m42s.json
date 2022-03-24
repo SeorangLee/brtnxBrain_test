@@ -39,7 +39,7 @@
         "step": 9,
         "title": "setting",
         "description": "make user defineded ROI",
-        "status": true
+        "status": false
     },
     {
         "step": 10,
