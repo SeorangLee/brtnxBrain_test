@@ -8,6 +8,9 @@ from copy import copy
 import string
 import random
 
+
+
+
 def setting_set_conditions(driver,options, action):
     try:
         setting_btn = driver.find_elements_by_xpath("""//*[@id="menu-label"]""")[3]
@@ -37,11 +40,21 @@ def setting_set_conditions(driver,options, action):
         }
     return data
 
+def randomName(num):
+    roiname_candidate = string.ascii_letters
+    val =""
+    for i in range(num):
+        val += random.choice(roiname_candidate)
+
+    return val
 
 def setting_mk_roi(driver,options, action):
+    
+    roiname = randomName(5)
+
     try:
         setting_roi_input = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/div[1]/div[2]/div[11]/input""")
-        setting_roi_input.send_keys('my roi')
+        setting_roi_input.send_keys(roiname)
         setting_roi_add_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]/div/div[2]/div[1]/div[2]/div[11]/div/img""")
         setting_roi_add_btn.click()
         sleep(0.5)

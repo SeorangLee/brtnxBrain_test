@@ -81,7 +81,11 @@ def upload_pacs(driver,options) :
         }
 
     except:
-         data = {
+          upload_pacs_exit_background = driver.find_element_by_xpath("""//*[@id="root"]/div/div[5]""")
+          upload_pacs_exit_background.click()
+          sleep(1)
+          Alert(driver).accept()
+          data = {
             "step":4, "title":"upload", "description":"pacs upload", "status":False 
         }
     return data

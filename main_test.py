@@ -36,7 +36,7 @@ data = []
 # #test 계정 삭제
 # login_delete_account = login_test.remove_test_id(driver,options)
 # data.append(login_delete_account)
-# print(data)
+print(data)
 #로그인
 login_login = login_test.login(driver, options)
 data.append(login_login)
