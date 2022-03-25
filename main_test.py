@@ -20,6 +20,8 @@ current_time  = now.strftime('%Y%m%d_%Hh%Mm%Ss')
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("prefs", {"profile.default_content_setting_values.notifications": 1})
+options.add_argument('window-size=1920x1080')
+options.add_argument('headless')
 driver = webdriver.Chrome(chrome_options=options, executable_path='C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe')
 # driver = webdriver.Chrome(r'C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe', options=options)
 driver.implicitly_wait(3)
