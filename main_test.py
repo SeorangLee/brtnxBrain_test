@@ -22,6 +22,7 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option("prefs", {"profile.default_content_setting_values.notifications": 1})
 options.add_argument('window-size=1920x1080')
 options.add_argument('headless')
+options.add_argument("disable-gpu")
 driver = webdriver.Chrome(chrome_options=options, executable_path='C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe')
 # driver = webdriver.Chrome(r'C://Users//SierraLee//WorkSpace//selenium//99//chromedriver.exe', options=options)
 driver.implicitly_wait(3)
@@ -70,6 +71,9 @@ data.append(setting_mk_roi)
 
 setting_save = setting_test.setting_save(driver, options, action)
 data.append(setting_save)
+
+setting_reset = setting_test.setting_reset(driver, options, action)
+data.append(setting_reset)
 
 # setting_reset = setting_test.setting_reset(driver, options, action)
 # data.append(setting_reset)

@@ -102,6 +102,8 @@ def setting_reset(driver,options, action):
         setting_reset_btn.click()
         sleep(0.5)
         Alert(driver).accept()
+        sleep(0.5)
+        Alert(driver).accept()
         data = {
           "step":11, "title":"setting", "description":"reset conditions", "status":True 
         }
