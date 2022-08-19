@@ -114,28 +114,23 @@ def remove_test_id(driver,options):
 def login(driver,options):
 	driver.get("http://localhost:3000/")
 	try:
-		elm_id = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[1]/input""")
-		elm_pwd = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/label[2]/input""")
-		elm_id.send_keys('seorang') 
-		elm_pwd.send_keys('seorang1234')
+		elm_id = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div/div[1]/div[2]/div[2]/label/input""")
+		elm_pwd = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div/div[1]/div[3]/div[2]/label/input""")
+		elm_id.send_keys('dwnusa1') 
+		elm_pwd.send_keys('imaging2016')
 
-		license_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/label/input""")
-		login_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div[1]/div[2]""")
 
-		# login_btn.click()
-		# Alert(driver).accept()
-
-		license_btn.click()
+		login_btn = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div/div[1]/div[4]/button""")
 		login_btn.click()
 		sleep(1.5)
      
 		data = {
-            "step":2, "title":"login", "description":"login", "status":True 
+            "step":1_1, "title":"login", "description":"login", "status":True 
         }
 	
 	except:
 		data = {
-            "step":2, "title":"login", "description":"login", "status":False 
+            "step":1_1, "title":"login", "description":"login", "status":False 
         }
 
 	return data
@@ -144,3 +139,21 @@ def login(driver,options):
 
 
 
+def select_product(driver,options):
+	driver.get("http://localhost:3000/")
+	try:
+		sleep(1)
+		select_amyloid = driver.find_element_by_xpath("""//*[@id="root"]/div/div[2]/div/div/div[1]/div""")
+		select_amyloid.click()
+		sleep(1)
+     
+		data = {
+            "step":1_2, "title":"select product", "description":"select Amyloid", "status":True 
+        }
+	
+	except:
+		data = {
+            "step":1_2, "title":"select product", "description":"select Amyloid", "status":False 
+        }
+
+	return data

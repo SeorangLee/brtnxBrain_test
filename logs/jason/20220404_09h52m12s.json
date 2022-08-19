@@ -1,0 +1,56 @@
+[
+    {
+        "step": 2,
+        "title": "login",
+        "description": "login",
+        "status": false
+    },
+    {
+        "step": 3,
+        "title": "upload",
+        "description": "double click table data",
+        "status": false
+    },
+    {
+        "step": 5,
+        "title": "view",
+        "description": "view button ",
+        "status": false
+    },
+    {
+        "step": 6,
+        "title": "view",
+        "description": "view burger button ",
+        "status": false
+    },
+    {
+        "step": 7,
+        "title": "analysis",
+        "description": "analysis page, burger button check",
+        "status": false
+    },
+    {
+        "step": 8,
+        "title": "setting",
+        "description": "setting ",
+        "status": false
+    },
+    {
+        "step": 9,
+        "title": "setting",
+        "description": "make user defineded ROI",
+        "status": false
+    },
+    {
+        "step": 10,
+        "title": "setting",
+        "description": "save conditions",
+        "status": false
+    },
+    {
+        "step": 11,
+        "title": "setting",
+        "description": "reset conditions",
+        "status": false
+    }
+]
